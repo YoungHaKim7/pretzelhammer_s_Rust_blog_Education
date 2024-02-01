@@ -326,5 +326,38 @@ async fn main() -> Result<HandlerResult, Box<dyn std::error::Error + Send + Sync
     } else {
         HandlerResult::default()
     }
+
+    let event = Rc::new(event);
+    let config = {
+        let mut config = Config {
+            trace_cx,
+            trace_attributes,
+            ..Default::default()
+        };
+        config.user_id = headers.get_required_header("x-user-id")?;
+        config.token = headers.get_required_header("x-token")?;
+        config.tenant_id = headers.get_optional_header("x-tenant");
+        config
+    };
+
+    let strategy: Box<dyn EventStrategy> = {
+        let event = event.clone();
+        match mode {
+            Mode::App => Box::new(AppStrategy::new(state, event)),
+            Mode::Adhoc => {
+                let strategy = AdhocStrategy::try_from(event)?;
+                Box::new(strategy)
+            }
+        }
+    };
+
+    let executor = Executor::new(strategy, config, worker);
+    let path = event.url_pathname.as_ref().ok_or(HeaderError {})?;
+    if path == "/healthz" {
+        executor.evaluate()
+    } else {
+        executor.execute().await
+    }
+
     Ok(())
 }
