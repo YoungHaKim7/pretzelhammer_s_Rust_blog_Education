@@ -15,6 +15,40 @@ struct AdhocStrategy {
     task: AdhocTask,
 }
 
+struct Executor {
+    strategy: Box<dyn EventStrategy>,
+    config: Config,
+    worker: Worker,
+}
+
+impl Executor {
+    pub fn new(strategy: Box<dyn EventStrategy>, config: Config, worker: Worker) -> Self {
+        Self {
+            strategy,
+            config,
+            worker,
+        }
+    }
+
+    fn evaluate(&self) -> Result<HandlerResult, MyError> {
+        self.strategy.health_check(&self.worker)
+    }
+
+    async fn execute(&self) -> Result<HandlerResult, MyError> {
+        let file_name = self.strategy.file_name()?;
+        let code = self.strategy.code()?;
+        let payload = self.strategy.payload();
+
+        let result = self
+            .worker
+            .clone()
+            .execute(file_name.into(), code, payload, &self.config)
+            .awati()?;
+
+        self.strategy.parse_result(result)
+    }
+}
+
 impl TryFrom<Rc<HandlerEvent>> for AdhocStrategy {
     type Error = MyError;
 
