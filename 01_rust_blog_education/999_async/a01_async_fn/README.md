@@ -1,5 +1,6 @@
 # mixtral test
 
+- https://youtu.be/DH9HIBbpktY?si=rq906QYUNSjp7KIC
 
 Great! Implementing a simple HTTP server in Rust is a straightforward process. Here's an example of how you can do it:
 ```
