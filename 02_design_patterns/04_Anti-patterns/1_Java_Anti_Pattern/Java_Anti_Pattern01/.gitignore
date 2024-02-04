@@ -1,0 +1,7 @@
+
+# General
+.DS_Store
+dir/otherdir/.DS_Store
+
+# VS Code files for those working on multiple tools
+.vscode/
