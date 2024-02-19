@@ -33,14 +33,4 @@ My posts are listed below in reverse chronological order.
 Note: Translations are community-maintained.
 
 
-# Makefile(delete execute file)
 
-- macOS ```find . -type f -perm +111 -print -exec rm -rf {} \;```
-- LinuxOS ```find . -type f -executable -print -exec rm {} \;```
-- WindowsOS ```Get-ChildItem -Filter *.exe -Recurse -Force | Remove-Item -Recurse -Force```
-```Makefile
-clean:
-		find . -type f -perm +111 -print -exec rm -rf {} \;
-rm:
-		find . -type f -executable -print -exec rm {} \;
-```
