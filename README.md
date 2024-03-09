@@ -8,6 +8,9 @@
 # pretzelhammer_s_Rust_blog_Education
 https://github.com/pretzelhammer/rust-blog
 
+- Fork함. 코드 백업
+  - https://github.com/YoungHaKim7/rust-blog
+
 <hr>
 
 # Educational blog posts for Rust beginners
