@@ -487,4 +487,3 @@ impl Advertisement for Modal {
 
 ## Pinning Select
 
-[Code Pinning_Select](../../03_Pinning_Select/tokio_pin_select)
