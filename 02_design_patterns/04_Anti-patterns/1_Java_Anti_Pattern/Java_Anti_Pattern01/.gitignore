@@ -5,3 +5,4 @@ dir/otherdir/.DS_Store
 
 # VS Code files for those working on multiple tools
 .vscode/
+.DS_Store
