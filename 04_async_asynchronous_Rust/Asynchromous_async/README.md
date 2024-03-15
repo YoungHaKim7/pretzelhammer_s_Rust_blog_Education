@@ -19,6 +19,7 @@
 - [8. Tokio + Axum: High-Performance Web Services with Dependenc Injection and Ergonomic Development](#tokio-console-its-like-htop-for-async)
 - [9. Tracing & Performance Metrics](#open-telemetry--more)
 - [What-is-pinning](#pinning)
+- [async-traits](#async-traits)
 - 10. Q&A
  
 # 1. Threads vs Async - Together or Separate[[🔝]](#1-hour-dive-into-asynchronous-rust--ardan-labs)
@@ -562,6 +563,8 @@ async fn fib(n : u32) -> u32 {
   - 불행히도 부모 스트림을 사용하려면 약간의 고정 체조가 필요합니다. 더 쉽게 하려면 pin_project_lite crate를 사용하십시오.
 
 ## Async Traits[[🔝]](#1-hour-dive-into-asynchronous-rust--ardan-labs)
+
+[Async Traits Code](Async_Traits/a01_async_traits)
 
 - Traits can't - yet(it's being stabilized) - contain async functions by default.
   - 특성은 기본적으로 비동기 기능을 포함할 수 없습니다(아직 안정화 중임).
