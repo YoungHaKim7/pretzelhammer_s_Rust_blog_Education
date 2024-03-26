@@ -1,0 +1,1 @@
+- sync 에서 time::Duration을 하면 main 쓰레드가 멈춘다. 
