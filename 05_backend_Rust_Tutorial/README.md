@@ -10,7 +10,8 @@ https://youtu.be/kerKXChDmsE?si=xIyox1SDy6lRSGl6
 <hr>
 
 # Rust + WASM
-
+- Compiling Rust to WASI(2024-03-18 01:00:00 UTC)
+  - https://benw.is/posts/compiling-rust-to-wasi
 
 # Serverless Architecture Conf London 2023: Rust + Wasm - A Dream Team for Serverless | Rainer Stropek
 https://youtu.be/eJYbjhlkpwE?si=Fclc_ze6uyj-5tnA
