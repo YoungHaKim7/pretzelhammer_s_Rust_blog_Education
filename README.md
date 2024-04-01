@@ -37,7 +37,7 @@ Note: Translations are community-maintained.
 
 
 
-# tailspin(
+# tailspin(Color)
 - ---- colors ----
 
 - A color is one specific type of ANSI escape code, and can refer to either the foreground or background color.
