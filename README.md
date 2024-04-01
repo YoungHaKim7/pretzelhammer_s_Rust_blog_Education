@@ -37,3 +37,10 @@ Note: Translations are community-maintained.
 
 
 
+# tailspin(
+- ---- colors ----
+
+- A color is one specific type of ANSI escape code, and can refer to either the foreground or background color.
+
+  - These use the standard numeric sequences.
+    - See http://invisible-island.net/xterm/ctlseqs/ctlseqs.html
